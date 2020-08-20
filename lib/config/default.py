@@ -1,4 +1,3 @@
-
 # ------------------------------------------------------------------------------
 # Copyright (c) Microsoft
 # Licensed under the MIT License.
@@ -12,7 +11,6 @@ from __future__ import print_function
 import os
 
 from yacs.config import CfgNode as CN
-
 
 _C = CN()
 
@@ -110,7 +108,7 @@ _C.DEBUG.SAVE_HEATMAPS_PRED = False
 
 def update_config(cfg, args):
     cfg.defrost()
-    
+
     cfg.merge_from_file(args.cfg)
     cfg.merge_from_list(args.opts)
 
@@ -119,6 +117,6 @@ def update_config(cfg, args):
 
 if __name__ == '__main__':
     import sys
+
     with open(sys.argv[1], 'w') as f:
         print(_C, file=f)
-
